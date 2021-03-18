@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de chat</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mx-auto w-full lg:w-3/4">
+        <header class="bg-green-500 text-white font-semibold px-4 py-6">
+            LOGOTIPO
+        </header>
+        <main class="grid grid-cols-1 sm:grid-cols-2">
+            <div class="p-4">
+                <h2 class="p-2 text-current font-light bg-gray-200">Registro</h2>
+                <div id="respuestaRegistro"></div>
+                <form id="registro">
+                    <input type="text" name="usuario" placeholder="Escribe tu ususario" class="w-full my-2 p-4 border-b border-gray-300 outline-none" autocomplete="off">
+                    <input type="email" name="correo" placeholder="Escribe tu correo electronico" class="w-full my-2 p-4 border-b border-gray-300 outline-none" autocomplete="off">
+                    <input type="password" name="pass" placeholder="Escribe una contraseña" class="w-full my-2 p-4 border-b border-gray-300 outline-none" autocomplete="off">
+                    <select name="genero" class="w-full my-2 p-4 focus:outline-none">
+                        <option value="">Selecciona tu sexo</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="masculino">Masculino</option>
+                    </select><br>
+                    <input type="submit" class="outline-none bg-gray-600 text-white px-4 py-2 my-2 text-center w-full rounded transition time-1000 ease hover:bg-gray-800" value="Terminar Registro">
+                </form>
+            </div>
+            <div class="p-4 border-t border-gray-600">
+                <h2 class="p-2 text-current font-light bg-gray-200">Iniciar sesion</h2>
+                <form id="login">
+                    <div id="respuestaLogin"></div>
+                    <input type="text" name="usuario" placeholder="Ingresa tu usuario" class="w-full my-2 p-4 border-b border-gray-300 outline-none" autocomplete="off">
+                    <input type="password" name="pass" placeholder="Ingresa tu contraseña" class="w-full my-2 p-4 border-b border-gray-300 outline-none" autocomplete="off">
+                    <input type="submit" class="outline-none bg-gray-600 text-white px-4 py-2 my-2 text-center w-full rounded transition time-1000 ease hover:bg-gray-800" value="Entrar">
+                </form>
+            </div>
+        </main>
+        <footer class="bg-green-500 text-white font-semibold px-4 py-6">footer</footer>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
