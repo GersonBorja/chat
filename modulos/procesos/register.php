@@ -7,6 +7,7 @@ $filtro = new filtrar();
 $peticionesCrud = new miCrud();
 
 $usuario = $filtro->quitarComillas($filtro->quitarHtml($filtro->quitarEspaciosDemas($_POST["usuario"])));
+$usertag = $filtro->quitarComillas($filtro->quitarHtml($filtro->quitarEspaciosDemas($filtro->minusculas($filtro->remplazar(" ", "", $_POST["usuario"])))));
 $correo = $filtro->quitarComillas($filtro->quitarHtml($filtro->quitarEspaciosDemas($_POST["correo"])));
 $pass = $filtro->quitarComillas($filtro->quitarHtml($filtro->quitarEspaciosDemas($_POST["pass"])));
 $genero = $filtro->quitarComillas($filtro->quitarHtml($filtro->quitarEspaciosDemas($filtro->minusculas($_POST["genero"]))));
@@ -28,7 +29,7 @@ if(empty($usuario) || empty($correo) || empty($pass) || empty($genero)){
         #Ya filtrado los campos, guardar los datos
         #encriptar clave
         $passEncrypt = $filtro->encriptarString($pass);
-        $sqlGuardar = "INSERT INTO usuarios (nombre, correo, pass, sexo) VALUES ('$usuario', '$correo', '$passEncrypt', '$genero')";
+        $sqlGuardar = "INSERT INTO usuarios (nombre, usertag, correo, pass, sexo) VALUES ('$usuario', '$usertag', '$correo', '$passEncrypt', '$genero')";
         echo $peticionesCrud->insertar($sqlGuardar, "Registro terminado");
     }
 }
