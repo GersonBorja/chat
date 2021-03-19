@@ -25,6 +25,11 @@ class filtrar extends conexionDb {
         return $resultado;
     }
     
+    public function remplazar($search, $replace, $string){
+        $resultado = str_replace($search, $replace, $string);
+        return $resultado;
+    }
+    
     public function encriptarString($string){
         $opciones = [
             'cost' => 10
